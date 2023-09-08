@@ -1,0 +1,143 @@
+* { margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body, html {
+  color: #EDEAF0;
+  background: #0C0C0D;
+  font-family: 'Inter', sans-serif;
+}
+.select {
+  padding: 6rem;
+}
+#category-select label {
+  font-size: 0.75rem;
+  letter-spacing: 0.0225rem;
+}
+#select-button {
+  margin-top: .5rem;
+  display: flex;
+  padding: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+
+  border-radius: .375rem;
+  border: 1px solid #252529;
+  background-color: #17171A;
+}
+#selected-value {
+  color: #AFABB6;
+  font-size: 0.875rem;
+  letter-spacing: 0.02625rem;
+}
+#angles svg {
+  width: 1rem;
+  height: 1rem;
+}
+#angles {
+  color: #AFABB6;
+}
+#angles [data-icon="angle-up"]{
+  display: none;
+}
+:has(#options-view-button:focus)  #select-button,
+#options-view-button:checked  #select-button{
+  outline: 1px solid #A881E6;
+}
+#category-select:has(#options-view-button:checked)
+label, :has(#options-view-button:checked) 
+#angles{
+  color: #A881E6;
+}
+:has(#options-view-button:checked)
+#angles [data-icon="angle-down"]{
+  display: none;
+}
+:has(#options-view-button:checked)
+#angles [data-icon="angle-up"]{
+  display: block;
+}
+#category-select {
+  position: relative;
+}
+#options-view-button {
+  all: unset;
+
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+  z-index: 3;
+}
+#options {
+  margin-top: .25rem;
+
+  border-radius: .375rem;
+  border: 1px solid #252529;
+  background-color: #17171A;
+
+  display: none;
+
+}
+.option { 
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  
+  position: relative;
+  padding: .75rem;
+  width: 100%;
+  border-bottom: 1px solid #252529;
+}
+.option .label {
+  color: #FBF9FE;
+
+}
+.option svg {
+  width: 1rem;
+  height: 1rem;
+}
+.option svg:last-child{
+  margin-left: auto;
+  color: #A881E6;
+}
+.option:has(input:checked), .option:hover{
+  border-bottom: 1px solid #252529;
+  background-color: #252529;
+}
+.option:has(input:focus){
+  outline: 1px solid #A881E6;
+}
+.option [data-icon="check"] {
+  display: none;
+}
+.option:has(input:checked) [data-icon="check"]{
+  display: block;
+}
+.option input[type="radio"]{
+  all: unset;
+
+  position: absolute;
+  inset: 0;
+
+  cursor: pointer;
+}
+.option:nth-child(1){
+  color: #BB9F3A;
+}
+.option:nth-child(2){
+  color: #8CAD51;
+}
+.option:nth-child(3){
+  color: #DB5BBF;
+}
+.option:nth-child(4){
+  color: #E07B67;
+}
+.option:nth-child(5){
+  color: #7B94CB;
+}
+#category-select:has(#options-view-button:checked)
++ #options {
+  display: block;
+}
